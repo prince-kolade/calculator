@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/c1f5e51c18.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./Assets/bootstrap-5.3.3-dist/css/bootstrap.css">
 </head>
 <body>
@@ -16,6 +17,10 @@
             justify-content: center;
             height: 550px;
             margin: 0;
+            background-image: url("https://img.freepik.com/premium-photo/top-view-office-table-desk-workspace-with-calculator-black-pen-laptop-blue_101276-159.jpg?semt=ais_hybrid&w=740");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
         }
         .calculator{
             background-color: #fff;
@@ -41,6 +46,8 @@
             grid-template-columns: repeat(4,1fr);
             height: 300px;
             gap: 20px;
+            border: none;
+            border-radius: 5px;
         }
         button{
             height: 50px;
@@ -49,6 +56,7 @@
             border-radius: 5px;
             background-color: #f0f0f0;
             cursor: pointer;
+            border-style: none;
            /* transition: background-color 0.2s;*/
         }
         button:hover{
@@ -56,31 +64,58 @@
         }
         .kolly{
             font-family: cursive;
+            font-size: 15px;
+        }
+        .fa-moon{
+            cursor: pointer;
+        }
+        .fa-sun{
+            cursor: pointer;
+        }
+        .button-1{
+            background-color: orange;
+            border: none;
+            border-radius: 5px;
+        }
+        .button-1:hover{
+            background-color: rgb(255, 181, 45);
+        }
+        .button-2{
+            background-color: rgb(121, 255, 255);
+            border: none;
+            border-radius: 5px;
+        }
+        .button-2:hover{
+            background-color: rgb(173, 255, 255);
         }
     </style>
-    <div class="calculator">
-        <h4 class="kolly">Kolade's standard calculator 😂🙂‍💪
+    <div class="calculator" id="calculator">
+        <h4 id="kolade" class="kolly">Kolade's standard calculator 😂🙂‍💪
         </h4>
+        <div class="d-flex justify-content-center gap-3">
+            <i id="moon" onclick="moonClick()" class="fa-solid fa-moon"></i>
+            <i id="sun" onclick="sunClick()" class="fa-solid fa-sun"></i>
+        </div>
         <input type="text" id="display" readonly>
         <div class="buttons">
             <input class="button" type="button" value="7" onclick="numberValue('7')">
             <input class="button" type="button" value="8" onclick="numberValue('8')">
             <input class="button" type="button" value="9" onclick="numberValue('9')">
-            <input class="button" type="button" value="c" onclick="clearResult()">
+            <input class="button-2" type="button" value="C" onclick="clearResult()">
             <input class="button" type="button" value="4" onclick="numberValue('4')">
             <input class="button" type="button" value="5" onclick="numberValue('5')">
             <input class="button" type="button" value="6" onclick="numberValue('6')">
-            <input class="button" type="button" value="/" onclick="numberValue('/')">
+            <input class="button-1" type="button" value="/" onclick="numberValue('/')">
             <input class="button" type="button" value="1" onclick="numberValue('1')">
             <input class="button" type="button" value="2" onclick="numberValue('2')">
             <input class="button" type="button" value="3" onclick="numberValue('3')">
-            <input class="button" type="button" value="*" onclick="numberValue('*')">
+            <input class="button-1" type="button" value="*" onclick="numberValue('*')">
             <input class="button" type="button" value="0" onclick="numberValue('0')">
             <input class="button" type="button" value="." onclick="numberValue('.')">
-            <input class="button" type="button" value="=" onclick="calculateResult()">
-            <input class="button" type="button" value="-" onclick="numberValue('-')">
-            <input class="button" type="button" value="+" onclick="numberValue('+')">
-
+            <input class="button-1" type="button" value="=" onclick="calculateResult()">
+            <input class="button-1" type="button" value="-" onclick="numberValue('-')">
+            <input class="button-1" type="button" value="+" onclick="numberValue('+')">
+            <input class="button-2" type="button" value="D" onclick="deleteValue()">
         </div>
     </div>
 
